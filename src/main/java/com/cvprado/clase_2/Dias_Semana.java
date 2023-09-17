@@ -9,5 +9,9 @@ public class Dias_Semana {
         System.out.println("Dia 5 - Viernes");
         System.out.println("Dia 6 - Sabado");
         System.out.println("Dia 7 - Domingo");
+
+        //concatenacion
+
+        System.out.println("Hola " + "Mundo ," + "hoy es:" + "Domingo");
     }
 }
