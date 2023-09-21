@@ -4,16 +4,16 @@ public class P4_Condicionales {
     public static void main(String[] args) {
 
         int var1 = 100;
-        int var2 =200;
+        int var2 = 200;
 
         if (var1 < var2) {
-            System.out.println( "Var1 es menor que var2");
+            System.out.println("Var1 es menor que var2");
         }
 
-        char var3 = "c";
-        char var4 = "n";
+        char var3 = 'C';
+        char var4 = 'N';
 
-        if (var3 == var4);{
+        if (var3 == var4) {
             System.out.println("Son Iguales");
         } else {
             System.out.println("Son Distintos");
@@ -34,22 +34,25 @@ public class P4_Condicionales {
         String dia = "Domingo";
 
         switch (dia) {
-            case "Lunes";
+            case "Lunes":
                 System.out.println(" Es Lunes");
                 break;
-            case "Martes";
+            case "Martes":
                 System.out.println("Es Martes");
                 break;
-            case "Miercoles";
+            case "Miercoles":
                 System.out.println("Es Miercoles");
                 break;
-            case "Jueves";
+            case "Jueves":
                 System.out.println("Es Jueves");
                 break;
-            case "Vernes";
+            case "Viernes":
                 System.out.println("Es Viernes");
                 break;
             default:
                 System.out.println("Es Fin de Semana");
         }
+    }
+
+
 }
