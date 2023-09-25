@@ -10,6 +10,15 @@ public class P6_Scanner {
         System.out.println("Ingresar un entero");
         int entero = scanner.nextInt();
 
+        System.out.println("Ingresar una cadena");
+        String cadena = scanner.next();
+
+        System.out.println(" Ingresar un decimal");
+        double decimal = scanner.nextDouble();
+
+        System.out.println(" Ingresar un booleano");
+        boolean booleano = scanner.nextBoolean();
+
 
     }
 }
