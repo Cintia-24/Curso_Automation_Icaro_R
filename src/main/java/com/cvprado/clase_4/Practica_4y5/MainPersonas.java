@@ -9,7 +9,7 @@ public class MainPersonas {
         persona.getApellido();
 
         alumno.getNombre();
-        
+
         profesor.getAlumnos();
 
     }

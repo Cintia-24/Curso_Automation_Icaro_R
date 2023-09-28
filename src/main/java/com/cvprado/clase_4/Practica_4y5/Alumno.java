@@ -1,4 +1,4 @@
-package com.cvprado.clase_4.Practica_4;
+package com.cvprado.clase_4.Practica_4y5;
 
 public class Alumno extends Persona {
 
@@ -24,5 +24,10 @@ public class Alumno extends Persona {
 
     public void setNota(Integer nota) {
         this.nota = nota;
+    }
+
+    @Override
+    public void saludar() {
+        System.out.println("Que ondaaa");
     }
 }

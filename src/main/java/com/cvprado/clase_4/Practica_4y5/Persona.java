@@ -1,4 +1,4 @@
-package com.cvprado.clase_4.Practica_4;
+package com.cvprado.clase_4.Practica_4y5;
 
 public class Persona {
 
@@ -24,5 +24,9 @@ public class Persona {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public void saludar() {
+        System.out.println("HOla como estan?");
     }
 }
