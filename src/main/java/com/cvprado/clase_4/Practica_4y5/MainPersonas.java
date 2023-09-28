@@ -1,4 +1,4 @@
-package com.cvprado.clase_4.Practica_4;
+package com.cvprado.clase_4.Practica_4y5;
 
 public class MainPersonas {
     public static void main(String[] args) {
