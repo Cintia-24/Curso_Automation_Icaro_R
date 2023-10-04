@@ -39,12 +39,5 @@ public class P7_PracticoIntegrador {
             System.out.println("Se excedio la cantidad de ingresos. Los numeros ingresados son: "+ listaDeNumeros);
 
         }
-
-
-
-
-
-
-
     }
 }
