@@ -2,55 +2,45 @@ package com.cvprado.ExamenPartePractica.Ejercicio_1y2;
 
 public class Calculadora {
 
-     protected int valor;
-     protected String operador;
+     int valor1;
+     int valor2;
 
-    public Calculadora(int valor, String operador) {
-        this.valor = valor;
-        this.operador = operador;
+    public Calculadora(int valor1, int valor2) {
+        this.valor1 = valor1;
+        this.valor2 = valor2;
     }
 
-    public int getValor() {
-        return valor;
+    public int getValor1() {
+        return valor1;
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    public void setValor1(int valor1) {
+        this.valor1 = valor1;
     }
 
-    public String getOperador() {
-        return operador;
+    public int getValor2() {
+        return valor2;
     }
 
-    public void setOperador(String operador) {
-        this.operador = operador;
+    public void setValor2(int valor2) {
+        this.valor2 = valor2;
     }
 
-    double suma() {
-        return 0;
+    public int suma(int valor1,int valor2) {
+        return valor1 + valor2;
     }
 
-    double resta() {
-        return 0;
+    public double resta(int valor1,int valor2) {
+        return valor1 - valor2;
     }
 
-    double multiplica() {
-        return 0;
+    public double multiplica(int valor1,int valor2){
+        return valor1 * valor2;
     }
 
-    double division() {
-        return 0;
+    public double divide(int valor1,int valor2){
+        return valor1 /valor2;
     }
-
-    void Switch(String operador) {
-    }
-
-
-
-    //La clase Calculadora debe tener los métodos básicos para operar: suma, resta,
-    //multiplicación y división. Estos métodos deben recibir como parámetros los valores que
-    //se ingresaron por consola y retornar el resultado. Ejemplo:
-    //suma(10, 30) -> retorna 40
-    //No es necesario que Calculadora tenga atributos, pero si lo considera necesario puede
-    //agregarlos.
 }
+
+

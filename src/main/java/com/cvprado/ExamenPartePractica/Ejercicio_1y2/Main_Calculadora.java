@@ -1,70 +1,56 @@
 package com.cvprado.ExamenPartePractica.Ejercicio_1y2;
 
+import com.cvprado.clase_4.Practica_4y5.Persona;
+
 import java.util.Scanner;
+import java.util.concurrent.LinkedTransferQueue;
 
-public class Main_Calculadora extends Calculadora {
+public class Main_Calculadora{
 
+    public static void main(String[] args) {
+        Calculadora calculadora = new Calculadora(0,0);
 
-
-    public double main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        valor = teclado.nextInt();
-        operador = teclado.next();
 
         System.out.println("Ingresar valor 1:");
-        valor = teclado.nextInt();
-
-        System.out.println("Ingresar valor 2:");
-        valor = teclado.nextInt();
+        int valor1 = teclado.nextInt();
 
         System.out.println("Ingresar operacion:");
-        operador = teclado.next();
+        String operador = teclado.next("0");
+
+        System.out.println("Ingresar valor 2:");
+        int valor2 = teclado.nextInt();
+
+
+
 
         double resultado = 0;
 
+        switch (operador) {
+            case "+":
+                resultado = calculadora.suma(valor1, valor2);
+                break;
+            case "-":
+                resultado = calculadora.resta(valor1, valor2);
+                break;
+            case "*":
+                resultado = calculadora.multiplica(valor1,valor2);
+                break;
+            case "/":
+                resultado = calculadora.divide(valor1,valor2);
 
-        double suma = valor + valor; {
-            return resultado;
-        }
-
-        double resta = valor - valor;{
-            return resultado;
-        }
-
-        double multiplica = valor * valor; {
-            return resultado;
-        }
-
-        double division = valor / valor; {
-            return resultado;
-        }
-
-
-        operador = "+";
-        Switch(operador); {
-            case : operador = "+";
-                System.out.println("El resultado es: " + resultado);
-            break;
-            case resta(): operador = "-";
-                System.out.println("El resultado es: " + resultado);
-            break;
-            case multiplica(): operador = "*";
-                System.out.println("El resultado es: " + resultado);
-            break;
-            case: operador = "/";
-                System.out.println("El resultado es: " + resultado);
-            break;
+                if (valor2 != 0) {
+                    System.out.println(" El resultado es: "+ resultado);
+                } else {
+                    System.out.println("Error: No se puede dividir por cero.");
+                }
+                break;
             default:
-                System.out.println("La operacion no es valida");
+                System.out.println("La operacion no es válida.");
+                return;
+
         }
 
-        if (resultado < 0){
-            System.out.println("Ten cuidado,el resultado en Negativo!");
-        } else if (resultado >=0 && resultado<10000) {
-            System.out.println("Resultado dentro de los limites");
-        }else {
-            System.out.println("ERROR, resultado muy grande");
-        }
     }
 }
 
