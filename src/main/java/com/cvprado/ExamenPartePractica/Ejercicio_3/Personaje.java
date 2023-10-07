@@ -1,6 +1,6 @@
 package com.cvprado.ExamenPartePractica.Ejercicio_3;
 
-abstract public class Personaje {
+public abstract class Personaje {
     //● Personaje: tiene el atributo salud (tipo entero) y un método abstracto entrenar()
 
      private int salud;
@@ -17,7 +17,5 @@ abstract public class Personaje {
         this.salud = salud;
     }
 
-    void entrenar(){
-
-    }
+    public abstract void entrenar();
 }

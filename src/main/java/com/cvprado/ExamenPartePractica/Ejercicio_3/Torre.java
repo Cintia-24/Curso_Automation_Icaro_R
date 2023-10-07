@@ -17,9 +17,11 @@ public class Torre extends Personaje {
         this.nivel = nivel;
     }
 
-    void entrenar() {
+    public void entrenar() {
+        nivel ++;
         System.out.println("Incrementa en 1 el nivel");
     }
+
     //Torre: extiende de Personaje y tiene el atributo nivel (tipo entero). Cuando entrena,
-    //aumenta si nivel en 1
+    //aumenta su nivel en 1
 }

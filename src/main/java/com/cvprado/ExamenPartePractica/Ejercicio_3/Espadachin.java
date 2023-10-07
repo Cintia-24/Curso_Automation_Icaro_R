@@ -2,7 +2,7 @@ package com.cvprado.ExamenPartePractica.Ejercicio_3;
 
 public class Espadachin extends Personaje {
 
-    private int ataque;
+    private int ataque = 10;
 
     public Espadachin(int salud, int ataque) {
         super(salud);
@@ -17,7 +17,7 @@ public class Espadachin extends Personaje {
         this.ataque = ataque;
     }
 
-    void entrenar() {
+    public void entrenar() {
         System.out.println("Incrementa en 10 el ataque");
     }
     // Espadachín: este personaje extiende de Personaje y además tiene el atributo

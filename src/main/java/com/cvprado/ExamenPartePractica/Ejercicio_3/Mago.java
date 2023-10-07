@@ -17,7 +17,7 @@ public class Mago extends Personaje {
         this.magia = magia;
     }
 
-    void entrenar() {
+    public void entrenar() {
         System.out.println("No sucede nada");
 
     }

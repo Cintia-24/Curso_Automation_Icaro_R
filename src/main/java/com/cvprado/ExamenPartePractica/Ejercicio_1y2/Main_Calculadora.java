@@ -10,47 +10,57 @@ public class Main_Calculadora{
     public static void main(String[] args) {
         Calculadora calculadora = new Calculadora(0,0);
 
-        Scanner teclado = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
 
-        System.out.println("Ingresar valor 1:");
-        int valor1 = teclado.nextInt();
+            Scanner teclado = new Scanner(System.in);
+            System.out.println("Ingresar valor 1:");
+            int valor1 = teclado.nextInt();
 
-        System.out.println("Ingresar operacion:");
-        String operador = teclado.next("0");
+            System.out.println("Ingresar valor 2:");
+            int valor2 = teclado.nextInt();
 
-        System.out.println("Ingresar valor 2:");
-        int valor2 = teclado.nextInt();
-
-
+            System.out.println("Ingresar operacion:");
+            String operador = teclado.next();
 
 
-        double resultado = 0;
+            double resultado = 0;
 
-        switch (operador) {
-            case "+":
-                resultado = calculadora.suma(valor1, valor2);
-                break;
-            case "-":
-                resultado = calculadora.resta(valor1, valor2);
-                break;
-            case "*":
-                resultado = calculadora.multiplica(valor1,valor2);
-                break;
-            case "/":
-                resultado = calculadora.divide(valor1,valor2);
+            switch (operador) {
+                case "+":
+                    resultado = calculadora.suma(valor1, valor2);
+                    System.out.println("El resultado es: " + resultado);
+                    break;
+                case "-":
+                    resultado = calculadora.resta(valor1, valor2);
+                    System.out.println("El resultado es: " + resultado);
+                    break;
+                case "*":
+                    resultado = calculadora.multiplica(valor1, valor2);
+                    System.out.println("El resultado es: " + resultado);
+                    break;
+                case "/":
+                    resultado = calculadora.divide(valor1, valor2);
 
-                if (valor2 != 0) {
-                    System.out.println(" El resultado es: "+ resultado);
-                } else {
-                    System.out.println("Error: No se puede dividir por cero.");
-                }
-                break;
-            default:
-                System.out.println("La operacion no es válida.");
-                return;
+                    if (valor2 != 0) {
+                        System.out.println(" El resultado es: " + resultado);
+                    } else {
+                        System.out.println("Error: No se puede dividir por cero.");
+                    }
+                    break;
+                default:
+                    System.out.println("La operacion no es válida.");
 
+
+            }
+
+            if (resultado < 0) {
+                System.out.println("Tené cuidado, el resultado es negativo!");
+            } else if (resultado >= 0 && resultado < 10000) {
+                System.out.println("Resultado dentro de los límites");
+            } else {
+                System.out.println("Error, resultado muy grande");
+            }
         }
-
     }
 }
 
