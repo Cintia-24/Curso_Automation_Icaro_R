@@ -18,6 +18,7 @@ public class Espadachin extends Personaje {
     }
 
     public void entrenar() {
+        ataque = ataque + 10;
         System.out.println("Incrementa en 10 el ataque");
     }
     // Espadachín: este personaje extiende de Personaje y además tiene el atributo
