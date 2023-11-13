@@ -1,5 +1,6 @@
 package com.cvprado.openCart;
 
+import com.cvprado.opencart_pages.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,11 +16,11 @@ import java.time.Duration;
 public class HomeTest extends BaseTest{
     @Test
     public void validarHome(){
+        HomePage homePage = new HomePage(getDriver());
+
         getDriver().get("https://opencart.abstracta.us/");
 
-        By title = By.xpath("//div[@id='logo']/h1/a");
-        By search = By.name("search");
-        By carrousel = By.id("slideshow0");
+
 
         WebElement titleElement = this.getDriver().findElement(title);
         WebElement searchElement = this.getDriver().findElement(search);

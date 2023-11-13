@@ -1,57 +1,52 @@
 package com.cvprado.openCart;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import com.cvprado.opencart_pages.HomePage;
+import com.cvprado.opencart_pages.LoginPage;
+import com.cvprado.opencart_pages.MyAccountPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void validarLogin() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        HomePage homePage = new HomePage(getDriver());
+        LoginPage loginPage = new LoginPage(getDriver());
+        MyAccountPage myAccountPage = new MyAccountPage(getDriver());
 
-        By myAccountBtn = By.xpath("//a [@title='My Account']");
-        ////a[contains(@href,'account/login')]
-        By loginBtn = By.xpath("//a[text()='Login']");
-
+        //Punto 1
         getDriver().get("https://opencart.abstracta.us/");
 
-        WebElement myAccountElement = wait.until(ExpectedConditions.elementToBeClickable(myAccountBtn));
-        myAccountElement.click();
+        // Punto 2 y 3
+        homePage.ingresarLogin();
 
-        WebElement loginBtnElement = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
-        loginBtnElement.click();
+        //Punto 4
 
-        By emailInput = By.id("input-email");
-        By passwordInput = By.id("input-password");
-        By loginForm = By.xpath("//input[@class='btn btn-primary']");
-        //  //input[@type='submit' and @value='Login'] opcion mas robusta de xpath
+        loginPage.login("testopencart@gmail.com", "1234");
 
-        WebElement emailInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
-        emailInputElement.sendKeys("testopencart@gmail.com");
-        WebElement passwordInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordInput));
-        passwordInputElement.sendKeys("1234");
-        WebElement loginFormElement = wait.until(ExpectedConditions.elementToBeClickable(loginForm));
-        loginFormElement.click();
+        //Punto 5
+        myAccountPage.getTitulo();
 
-        By myAccountTitle = By.xpath("//h2 [text()='My Account']");
-
-        WebElement myAccountTitleElement = wait.until(presenceOfElementLocated(myAccountTitle));
-
-        Assert.assertEquals(myAccountTitleElement.getText(),"My Account");
+        Assert.assertEquals(myAccountPage.getTitulo(),"My Account");
     }
 
+    @Test
+    public void loginFallido() {
+        HomePage homePage = new HomePage(getDriver());
+        LoginPage loginPage = new LoginPage(getDriver());
+        MyAccountPage myAccountPage = new MyAccountPage(getDriver());
+
+        //Punto 1
+        getDriver().get("https://opencart.abstracta.us/");
+
+        // Punto 2 y 3
+        homePage.ingresarLogin();
+
+        //Punto 4
+
+        loginPage.login("testopencart@gmail.com", "1235");
+
+        //Punto 5
+
+    }
 }
