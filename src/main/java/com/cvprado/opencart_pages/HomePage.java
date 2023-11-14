@@ -24,7 +24,8 @@ public class HomePage {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-    public void ingresarLogin(){
+
+    public void ingresarLogin() {
         WebElement myAccountElement = wait.until(ExpectedConditions.elementToBeClickable(myAccountBtn));
         myAccountElement.click();
 
@@ -32,6 +33,42 @@ public class HomePage {
         loginBtnElement.click();
     }
 
-    
+    //public void validarHome(){
 
+    //WebElement titleElement = this.getDriver().findElement(title);
+    //WebElement searchElement = this.getDriver().findElement(search);
+    //WebElement carrouselElement = this.getDriver().findElement(carrousel);
+
+
+    //WebElement titleElement = this.driver.findElement("//div[@id='logo']/h1/a");
+    //WebElement searchElement = this.driver.findElement("search");
+    //WebElement carrouselElement = this.driver.findElement("slideshow0");
+    //Se puede escribir asi para no tener tanto codigo y podes sacar los By, no definir variables.
+
+    //Assert.assertEquals(titleElement.getText(),"Your Store");
+    //Assert.assertTrue(searchElement.isDisplayed());
+    //Assert.assertTrue(carrouselElement.isDisplayed());
+
+    //es una manera de abstraer pero que no es correcta a mmenos que trabajemos con cucumber.
+    //}
+
+    public String getTitulo() {
+        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
+        return titleElement.getText();
+    }
+
+    public Boolean buscadorEsVisible() {
+        WebElement searchElement = wait.until(ExpectedConditions.visibilityOfElementLocated(search));
+        return searchElement.isDisplayed();
+    }
+
+    public Boolean carruselEsVisible() {
+        WebElement carrouselElement = wait.until(ExpectedConditions.visibilityOfElementLocated(carrousel));
+        return carrouselElement.isDisplayed();
+    }
+
+    //WebElement titleElement = this.driver.findElement("//div[@id='logo']/h1/a");
+    //WebElement searchElement = this.driver.findElement("search");
+    //WebElement carrouselElement = this.driver.findElement("slideshow0");
+    //Se puede escribir asi para no tener tanto codigo y podes sacar los By, no definir variables.
 }

@@ -20,22 +20,8 @@ public class HomeTest extends BaseTest{
 
         getDriver().get("https://opencart.abstracta.us/");
 
-
-
-        WebElement titleElement = this.getDriver().findElement(title);
-        WebElement searchElement = this.getDriver().findElement(search);
-        WebElement carrouselElement = this.getDriver().findElement(carrousel);
-
-
-        //WebElement titleElement = this.driver.findElement("//div[@id='logo']/h1/a");
-        //WebElement searchElement = this.driver.findElement("search");
-        //WebElement carrouselElement = this.driver.findElement("slideshow0");
-        //Se puede escribir asi para no tener tanto codigo y podes sacar los By, no definir variables.
-
-        Assert.assertEquals(titleElement.getText(),"Your Store");
-        Assert.assertTrue(searchElement.isDisplayed());
-        Assert.assertTrue(carrouselElement.isDisplayed());
+        Assert.assertEquals(homePage.getTitulo(),"Your Store");
+        Assert.assertTrue(homePage.buscadorEsVisible());
+        Assert.assertTrue(homePage.carruselEsVisible());
     }
-
-
 }
