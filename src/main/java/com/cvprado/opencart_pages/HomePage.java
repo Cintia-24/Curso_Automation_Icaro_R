@@ -17,6 +17,8 @@ public class HomePage {
     ////a[contains(@href,'account/login')]
     By loginBtn = By.xpath("//a[text()='Login']");
 
+    By registerBtn = By.xpath("//a [contains (@href,\"account/register\")]");
+
     WebDriver driver;
     WebDriverWait wait;
 
@@ -32,6 +34,16 @@ public class HomePage {
         WebElement loginBtnElement = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
         loginBtnElement.click();
     }
+    public void ingresarRegister() {
+        WebElement myAccountElement = wait.until(ExpectedConditions.elementToBeClickable(myAccountBtn));
+        myAccountElement.click();
+
+        WebElement registerBtnElement = wait.until(ExpectedConditions.elementToBeClickable(registerBtn));
+        registerBtnElement.click();
+    }
+
+
+
 
     //public void validarHome(){
 
