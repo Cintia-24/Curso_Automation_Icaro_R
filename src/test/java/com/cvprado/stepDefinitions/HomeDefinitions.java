@@ -10,7 +10,7 @@ public class HomeDefinitions {
     HomePage homePage;
 
     public HomeDefinitions(HomePage homePage) {
-        this.homePage = homePage;
+        this.homePage = new HomePage(Hooks.getDriver());
     }
 
     @Dado("que el usuario ingresa a la pagina de Opencart")
