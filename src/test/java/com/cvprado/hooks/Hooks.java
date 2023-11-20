@@ -28,7 +28,6 @@ public class Hooks {
     public static WebDriver getDriver() {
         return driver;
     }
-
     @After
     public void tearDown(){
         if(driver !=null) {
