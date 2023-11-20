@@ -1,8 +1,8 @@
 package com.cvprado.openCart;
 
 import com.cvprado.opencart_pages.HomePage;
-import com.cvprado.opencart_pages.Pages.RegisterPage;
-import com.cvprado.opencart_pages.Pages.SuccessAccountPage;
+import com.cvprado.opencart_pages.RegisterPage;
+import com.cvprado.opencart_pages.SuccessAccountPage;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;

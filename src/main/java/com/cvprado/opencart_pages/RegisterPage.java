@@ -1,4 +1,4 @@
-package com.cvprado.opencart_pages.Pages;
+package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
