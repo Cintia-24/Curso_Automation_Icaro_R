@@ -9,9 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MyAccountPage {
-    private By myAccountTitle = By.xpath("//h2 [text()='My Account']");
+    private final By myAccountTitle = By.xpath("//h2 [text()='My Account']");
 
-    private By cameraBtn = By.xpath("//*[@id=\"menu\"]/div[2]/ul/li[7]/a");
+    private final By cameraBtn = By.xpath("//a[contains (@href,\"product/category&path=33\")]");
+
+    private final By cameraProduct =By.xpath("//*[@id=\"content\"]/div[2]/div[1]/div/div[2]/div[1]/h4/a");
+    // tiene nombre pero si lo uso no lo encuentra. y falla el test.
 
     WebDriver driver;
     WebDriverWait wait;
@@ -31,5 +34,9 @@ public class MyAccountPage {
         cameraBtnElement.click();
     }
 
+    public void selectProduct(){
+        WebElement cameraProductElement = wait.until(ExpectedConditions.elementToBeClickable(cameraProduct));
+        cameraProductElement.click();
+    }
 
 }
