@@ -10,21 +10,21 @@ import java.time.Duration;
 
 public class WishListPage {
 
-    private By title = By.xpath("//*[@id=\"content\"]/h2");
-    private By productImg = By.xpath("//img[@title='Canon EOS 5D' and @class='img-thumbnail']");
+    private final By title = By.xpath("//*[@id=\"content\"]/h2");
+    private final By productImg = By.xpath("//*[@id=\"content\"]/div[1]/table/tbody/tr[1]/td[1]/a/img");
 
     WebDriver driver;
     WebDriverWait wait;
 
     public WishListPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
     public String getTitulo() {
         WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
         return titleElement.getText();
     }
-    public boolean validarWishList(){
+    public boolean imgEsVisible(){
         WebElement productImgElement = wait.until(ExpectedConditions.visibilityOfElementLocated (productImg));
         return productImgElement.isDisplayed();
     }

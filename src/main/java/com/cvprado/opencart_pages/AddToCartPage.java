@@ -10,19 +10,19 @@ import java.time.Duration;
 
 public class AddToCartPage {
 
-    private By imgProduct = By.xpath("//img[@title='Canon EOS 5D' and @class='img-thumbnail']");
-    private By listViewBtn = By.id("list-view");
+    private final By imgProduct = By.xpath("//img[@title='Canon EOS 5D' and @class='img-responsive']");
+    private final By listViewBtn = By.id("list-view");
 
-    private By addWishListBtn = By.xpath("//button[contains(@data-original-title, 'Add to Wish List')]");
+    private final By addWishListBtn = By.xpath("//button[contains(@data-original-title, 'Add to Wish List')]");
 
-    private By wishListBtn = By.xpath("//*[@id=\"content\"]/div[2]/div[2]/div/div[2]/div[2]/button[2]");
+    private final By wishListBtn = By.xpath("//a [contains (@href,\"account/wishlist\")]");
 
     WebDriver driver;
     WebDriverWait wait;
 
     public AddToCartPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     public void verModoLista(){
@@ -44,6 +44,4 @@ public class AddToCartPage {
         WebElement wishListBtnElement = wait.until(ExpectedConditions.elementToBeClickable(wishListBtn));
         wishListBtnElement.click();
     }
-
-
 }

@@ -1,6 +1,7 @@
 package com.cvprado.openCart;
 
 import com.cvprado.opencart_pages.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class WishListTest extends BaseTest{
@@ -29,7 +30,10 @@ public class WishListTest extends BaseTest{
         addToCartPage.productIsPresent();
         addToCartPage.addToWishList();
         addToCartPage.ingresarWishList();
-        wishListPage.getTitulo();
-        wishListPage.validarWishList();
+
+        Assert.assertEquals(wishListPage.getTitulo(),"Account");
+
+        Assert.assertTrue(wishListPage.imgEsVisible());
+
     }
 }
