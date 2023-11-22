@@ -4,12 +4,13 @@ import com.cvprado.hooks.Hooks;
 import com.cvprado.opencart_pages.HomePage;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
+import io.cucumber.java.es.Y;
 import org.testng.Assert;
 
 public class HomeDefinitions {
-    HomePage homePage;
+    private HomePage homePage;
 
-    public HomeDefinitions(HomePage homePage) {
+    public HomeDefinitions() {
         this.homePage = new HomePage(Hooks.getDriver());
     }
 
@@ -24,6 +25,11 @@ public class HomeDefinitions {
         Assert.assertEquals(homePage.getTitulo(),"Your Store");
         Assert.assertTrue(homePage.buscadorEsVisible());
         Assert.assertTrue(homePage.carruselEsVisible());
+    }
+
+    @Y("el usuario ingresa al login")
+    public void elUsuarioIngresaAlLogin() {
+        homePage.ingresarLogin();
     }
 }
     //        HomePage homePage = new HomePage(getDriver());

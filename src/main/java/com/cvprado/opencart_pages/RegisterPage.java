@@ -10,18 +10,19 @@ import java.time.Duration;
 
 public class RegisterPage {
 
-    By title = By.xpath("//h1[text()='Account']");
-    By nameInput = By.id("input-firstname");
-    By lastnameInput = By.id("input-lastname");
-    By emailInput = By.id("input-email");
-    By telInput = By.id("input-telephone");
+    private By title = By.xpath("//h1[text()='Account']");
+    private By nameInput = By.id("input-firstname");
+    private By lastnameInput = By.id("input-lastname");
+    private By emailInput = By.id("input-email");
+    private By telInput = By.id("input-telephone");
 
-    By passInput = By.id("input-password");
-    By confirmpassInput = By.id("input-confirm");
+    private By passInput = By.id("input-password");
 
-    By agreeBtn = By.name("agree");
+    private By confirmpassInput = By.id("input-confirm");
 
-    By continueBtn = By.xpath("//input[@type='submit']");
+    private By agreeBtn = By.name("agree");
+
+    private By continueBtn = By.xpath("//input[@type='submit']");
 
 
 

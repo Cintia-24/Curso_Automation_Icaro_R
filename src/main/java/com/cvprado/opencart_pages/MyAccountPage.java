@@ -9,7 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MyAccountPage {
-    By myAccountTitle = By.xpath("//h2 [text()='My Account']");
+    private By myAccountTitle = By.xpath("//h2 [text()='My Account']");
+
+    private By cameraBtn = By.xpath("//*[@id=\"menu\"]/div[2]/ul/li[7]/a");
 
     WebDriver driver;
     WebDriverWait wait;
@@ -22,6 +24,11 @@ public class MyAccountPage {
     public String getTitulo(){
         WebElement myAccountTitleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(myAccountTitle));
         return myAccountTitleElement.getText();
+    }
+
+    public void ingresarSeccionCameras(){
+        WebElement cameraBtnElement = wait.until(ExpectedConditions.elementToBeClickable(cameraBtn));
+        cameraBtnElement.click();
     }
 
 

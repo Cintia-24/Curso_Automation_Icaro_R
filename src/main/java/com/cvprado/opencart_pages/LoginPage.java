@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage {
-    By emailInput = By.id("input-email");
-    By passwordInput = By.id("input-password");
-    By loginForm = By.xpath("//input[@class='btn btn-primary']");
+    private By emailInput = By.id("input-email");
+    private By passwordInput = By.id("input-password");
+    private By loginForm = By.xpath("//input[@class='btn btn-primary']");
     //  //input[@type='submit' and @value='Login'] opcion mas robusta de xpath
 
     WebDriver driver;

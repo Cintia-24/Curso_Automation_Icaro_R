@@ -9,15 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage {
-    By title = By.xpath("//div[@id='logo']/h1/a");
-    By search = By.name("search");
-    By carrousel = By.id("slideshow0");
+    private By title = By.xpath("//div[@id='logo']/h1/a");
+    private By search = By.name("search");
+    private By carrousel = By.id("slideshow0");
 
-    By myAccountBtn = By.xpath("//a [@title='My Account']");
+    private By myAccountBtn = By.xpath("//a [@title='My Account']");
     ////a[contains(@href,'account/login')]
-    By loginBtn = By.xpath("//a[text()='Login']");
+    private By loginBtn = By.xpath("//a[text()='Login']");
 
-    By registerBtn = By.xpath("//a [contains (@href,\"account/register\")]");
+    private By registerBtn = By.xpath("//a [contains (@href,\"account/register\")]");
 
     WebDriver driver;
     WebDriverWait wait;
@@ -41,9 +41,6 @@ public class HomePage {
         WebElement registerBtnElement = wait.until(ExpectedConditions.elementToBeClickable(registerBtn));
         registerBtnElement.click();
     }
-
-
-
 
     //public void validarHome(){
 
