@@ -2,34 +2,25 @@ package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
-public class SuccessAccountPage {
+
+public class SuccessAccountPage extends BasePage{
 
     private By title = By.xpath("//h1[text()='Account']");
 
    private By text = By.xpath("//*[contains(text(),'Congratulations')]");
 
 
-    WebDriver driver;
-    WebDriverWait wait;
-
     public SuccessAccountPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     public String getTitle() {
-        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
-        return titleElement.getText();
+        return getText(title);
     }
 
     public Boolean textEsVisible() {
-        WebElement textElement = wait.until(ExpectedConditions.visibilityOfElementLocated(text));
-        return textElement.isDisplayed();
+        return isDisplayed(text);
     }
 }

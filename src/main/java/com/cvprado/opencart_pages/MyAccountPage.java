@@ -2,13 +2,10 @@ package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
-public class MyAccountPage {
+public class MyAccountPage extends BasePage{
     private final By myAccountTitle = By.xpath("//h2 [text()='My Account']");
 
     private final By cameraBtn = By.xpath("//a[contains (@href,\"product/category&path=33\")]");
@@ -20,23 +17,18 @@ public class MyAccountPage {
     WebDriverWait wait;
 
     public MyAccountPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     public String getTitulo(){
-        WebElement myAccountTitleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(myAccountTitle));
-        return myAccountTitleElement.getText();
+        return getText(myAccountTitle);
     }
 
     public void ingresarSeccionCameras(){
-        WebElement cameraBtnElement = wait.until(ExpectedConditions.elementToBeClickable(cameraBtn));
-        cameraBtnElement.click();
+        click(cameraBtn);
     }
 
     public void selectProduct(){
-        WebElement cameraProductElement = wait.until(ExpectedConditions.elementToBeClickable(cameraProduct));
-        cameraProductElement.click();
+        click(cameraProduct);
     }
-
 }

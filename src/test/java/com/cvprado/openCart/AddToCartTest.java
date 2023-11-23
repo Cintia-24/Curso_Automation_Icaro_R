@@ -27,7 +27,7 @@ public class AddToCartTest extends BaseTest{
         myAccountPage.ingresarSeccionCameras();
 
         //Punto 4
-        myAccountPage.selectProduct();
+        myAccountPage.selectProduct(); //generar un metodo que el elemento sea solo visible no clicable
 
         //Punto 5
         productPage.selectOptionAndAdd();

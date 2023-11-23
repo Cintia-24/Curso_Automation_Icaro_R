@@ -2,13 +2,8 @@ package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class AddToCartPage {
+public class AddToCartPage extends BasePage {
 
     private final By imgProduct = By.xpath("//img[@title='Canon EOS 5D' and @class='img-responsive']");
     private final By listViewBtn = By.id("list-view");
@@ -17,31 +12,24 @@ public class AddToCartPage {
 
     private final By wishListBtn = By.xpath("//a [contains (@href,\"account/wishlist\")]");
 
-    WebDriver driver;
-    WebDriverWait wait;
 
     public AddToCartPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        super(driver);
     }
 
     public void verModoLista(){
-        WebElement listViewBtnElement = wait.until(ExpectedConditions.elementToBeClickable(listViewBtn));
-        listViewBtnElement.click();
+        click(listViewBtn);
     }
 
     public boolean productIsPresent(){
-        WebElement imgProductElement = wait.until(ExpectedConditions.visibilityOfElementLocated(imgProduct));
-        return imgProductElement.isDisplayed();
+        return isDisplayed(imgProduct);
     }
 
     public void addToWishList(){
-        WebElement addWishListBtnElement = wait.until(ExpectedConditions.elementToBeClickable(addWishListBtn));
-        addWishListBtnElement.click();
+        click(addWishListBtn);
     }
 
     public void ingresarWishList(){
-        WebElement wishListBtnElement = wait.until(ExpectedConditions.elementToBeClickable(wishListBtn));
-        wishListBtnElement.click();
+        click(wishListBtn);
     }
 }

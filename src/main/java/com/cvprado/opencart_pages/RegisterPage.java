@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class RegisterPage {
+public class RegisterPage extends BasePage {
 
     private By title = By.xpath("//h1[text()='Account']");
     private By nameInput = By.id("input-firstname");
@@ -24,40 +24,25 @@ public class RegisterPage {
 
     private By continueBtn = By.xpath("//input[@type='submit']");
 
-
-
-    WebDriver driver;
     WebDriverWait wait;
 
     public RegisterPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     public void LlenarForm(String name, String lastname, String email,String telefono, String password) {
 
-        WebElement nameInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(nameInput));
-        nameInputElement.sendKeys(name);
-
-        WebElement lastnameInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(lastnameInput));
-        lastnameInputElement.sendKeys(lastname);
-
-        WebElement emailInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
-        emailInputElement.sendKeys(email);
-
-        WebElement telephoneInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(telInput));
-        telephoneInputElement.sendKeys(telefono);
-
-        WebElement passInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(passInput));
-        passInputElement.sendKeys(password);
+        sendKeys(nameInput,name);
+        sendKeys(lastnameInput,lastname);
+        sendKeys(emailInput,email);
+        sendKeys(telInput,telefono);
+        sendKeys(passInput,password);
 
         WebElement confirmpassInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmpassInput));
         confirmpassInputElement.sendKeys(password);
 
-        WebElement agreeBtnElement = wait.until(ExpectedConditions.elementToBeClickable(agreeBtn));
-        agreeBtnElement.click();
+        click(agreeBtn);
+        click(continueBtn);
 
-        WebElement continueBtnElement = wait.until(ExpectedConditions.elementToBeClickable(continueBtn));
-        continueBtnElement.click();
     }
 }

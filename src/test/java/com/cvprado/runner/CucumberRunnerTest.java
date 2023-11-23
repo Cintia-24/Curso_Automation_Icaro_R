@@ -6,6 +6,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/resources/features",
         glue = {"com.cvprado.stepDefinitions", "com.cvprado.hooks"},
         snippets = CucumberOptions.SnippetType.CAMELCASE
+        //tags = @smoke
 )
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 }

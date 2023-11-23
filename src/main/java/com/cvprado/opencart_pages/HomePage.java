@@ -2,13 +2,8 @@ package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class HomePage {
+public class HomePage extends BasePage{
     private By title = By.xpath("//div[@id='logo']/h1/a");
     private By search = By.name("search");
     private By carrousel = By.id("slideshow0");
@@ -19,27 +14,30 @@ public class HomePage {
 
     private By registerBtn = By.xpath("//a [contains (@href,\"account/register\")]");
 
-    WebDriver driver;
-    WebDriverWait wait;
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     public void ingresarLogin() {
-        WebElement myAccountElement = wait.until(ExpectedConditions.elementToBeClickable(myAccountBtn));
-        myAccountElement.click();
-
-        WebElement loginBtnElement = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
-        loginBtnElement.click();
+        click(myAccountBtn);
+        click(loginBtn);
     }
     public void ingresarRegister() {
-        WebElement myAccountElement = wait.until(ExpectedConditions.elementToBeClickable(myAccountBtn));
-        myAccountElement.click();
+        click(myAccountBtn);
+        click(registerBtn);
+    }
 
-        WebElement registerBtnElement = wait.until(ExpectedConditions.elementToBeClickable(registerBtn));
-        registerBtnElement.click();
+    public String getTitulo() {
+        return getText(title);
+    }
+
+    public Boolean buscadorEsVisible() {
+        return isDisplayed(search);
+    }
+
+    public Boolean carruselEsVisible() {
+        return isDisplayed(carrousel);
     }
 
     //public void validarHome(){
@@ -61,20 +59,7 @@ public class HomePage {
     //es una manera de abstraer pero que no es correcta a mmenos que trabajemos con cucumber.
     //}
 
-    public String getTitulo() {
-        WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
-        return titleElement.getText();
-    }
 
-    public Boolean buscadorEsVisible() {
-        WebElement searchElement = wait.until(ExpectedConditions.visibilityOfElementLocated(search));
-        return searchElement.isDisplayed();
-    }
-
-    public Boolean carruselEsVisible() {
-        WebElement carrouselElement = wait.until(ExpectedConditions.visibilityOfElementLocated(carrousel));
-        return carrouselElement.isDisplayed();
-    }
 
     //WebElement titleElement = this.driver.findElement("//div[@id='logo']/h1/a");
     //WebElement searchElement = this.driver.findElement("search");
