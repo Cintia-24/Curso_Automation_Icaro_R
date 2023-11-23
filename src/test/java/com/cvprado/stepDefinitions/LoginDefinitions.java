@@ -19,7 +19,7 @@ public class LoginDefinitions {
 
     @Cuando("el usuario ingresa credenciales validas")
     public void elUsuarioIngresaCredencialesValidas() {
-        loginPage.login("testopencart@gmail.com", "1234");
+        loginPage.login(Hooks.getConfigValue("username"), Hooks.getConfigValue("password"));
 
     }
 

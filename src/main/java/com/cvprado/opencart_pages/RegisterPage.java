@@ -60,6 +60,4 @@ public class RegisterPage {
         WebElement continueBtnElement = wait.until(ExpectedConditions.elementToBeClickable(continueBtn));
         continueBtnElement.click();
     }
-
-
 }

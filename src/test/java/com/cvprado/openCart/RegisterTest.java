@@ -31,6 +31,9 @@ public class RegisterTest extends BaseTest {
                                 faker.phoneNumber().phoneNumber(),
                                 faker.internet().password());
 
+
+
+
         Assert.assertEquals(successAccountPage.getTitle(),"Account");
 
         Assert.assertTrue(successAccountPage.textEsVisible());

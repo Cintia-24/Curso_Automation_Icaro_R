@@ -17,7 +17,7 @@ public class HomeDefinitions {
     @Dado("que el usuario ingresa a la pagina de Opencart")
     public void queElUsuarioIngresaALaPaginaDeOpencart() {
         //System.out.println("STEP DADO");
-        Hooks.getDriver().get("https://opencart.abstracta.us/");
+        Hooks.getDriver().get(Hooks.getConfigValue("url"));
     }
     @Entonces("se valida que le usuario se encuentra en la home")
     public void seValidaQueLeUsuarioSeEncuentraEnLaHome() {
