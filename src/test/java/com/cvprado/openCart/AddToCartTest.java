@@ -1,7 +1,6 @@
 package com.cvprado.openCart;
 
 import com.cvprado.opencart_pages.*;
-import org.checkerframework.checker.units.qual.Temperature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

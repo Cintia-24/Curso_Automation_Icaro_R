@@ -2,7 +2,6 @@ package com.cvprado.stepDefinitions;
 
 import com.cvprado.hooks.Hooks;
 import com.cvprado.opencart_pages.HomePage;
-import com.cvprado.opencart_pages.MyAccountPage;
 import com.cvprado.opencart_pages.RegisterPage;
 import com.cvprado.opencart_pages.SuccessAccountPage;
 import com.github.javafaker.Faker;
