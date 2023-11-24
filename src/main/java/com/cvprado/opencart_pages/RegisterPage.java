@@ -38,8 +38,8 @@ public class RegisterPage extends BasePage {
         sendKeys(telInput,telefono);
         sendKeys(passInput,password);
 
-        WebElement confirmpassInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmpassInput));
-        confirmpassInputElement.sendKeys(password);
+        //WebElement confirmpassInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmpassInput));
+        //confirmpassInputElement.sendKeys(password);
 
         click(agreeBtn);
         click(continueBtn);

@@ -11,12 +11,15 @@ public class WishListPage extends BasePage{
 
 
     public WishListPage(WebDriver driver) {
+
         super(driver);
     }
     public String getTitulo() {
+
         return getText(title);
     }
     public boolean imgEsVisible(){
+
         return isDisplayed(productImg);
     }
 }

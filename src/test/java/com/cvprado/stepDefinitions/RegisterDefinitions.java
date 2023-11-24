@@ -58,7 +58,6 @@ public class RegisterDefinitions {
                                                                           String telefono,
                                                                           String password) {
         registerPage.LlenarForm(nombre,apellido,email, telefono,password);
-
     }
 
     @Entonces("se verifica que la cuenta se creo correctamente")
@@ -82,8 +81,12 @@ public class RegisterDefinitions {
         }
     }
 
-    //@Entonces("se verifica el mensaje de error {string}")
-    //public void seVerificaElMensajeDeError(String mensaje) {
-        //Assert.assertEquals(registerPage.getMensajeDeError(), mensaje);
-    //}
+    @Cuando("ingresa cada uno de los datos requeridos y presiona continuar")
+    public void ingresaCadaUnoDeLosDatosRequeridosYPresionaContinuar() {
+
+    }
 }
+//@Entonces("se verifica el mensaje de error {string}")
+//public void seVerificaElMensajeDeError(String mensaje) {
+//Assert.assertEquals(registerPage.getMensajeDeError(), mensaje);
+//}
