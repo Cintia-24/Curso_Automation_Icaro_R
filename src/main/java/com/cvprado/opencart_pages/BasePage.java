@@ -40,5 +40,4 @@ public class BasePage {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         element.sendKeys(text);
     }
-
 }

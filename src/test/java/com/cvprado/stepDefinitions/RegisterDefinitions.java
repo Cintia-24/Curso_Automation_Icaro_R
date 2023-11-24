@@ -21,15 +21,14 @@ public class RegisterDefinitions {
     private SuccessAccountPage successAccountPage;
     private MyAccountPage myAccountPage;
 
-
-    Faker faker = new Faker();
-
-    public void RegisterDefinition(){
+    public RegisterDefinitions(){
         this.homePage = new HomePage(Hooks.getDriver());
         this.registerPage = new RegisterPage(Hooks.getDriver());
         this.successAccountPage = new SuccessAccountPage(Hooks.getDriver());
         this.myAccountPage =new MyAccountPage(Hooks.getDriver());
     }
+
+    Faker faker = new Faker();
 
     @Y("entra a la página de registro")
     public void entraALaPaginaDeRegistro(){
@@ -59,7 +58,6 @@ public class RegisterDefinitions {
                                                                           String email,
                                                                           String telefono,
                                                                           String password) {
-        myAccountPage.getTitulo();
     }
 
     @Entonces("se verifica que la cuenta se creo correctamente")

@@ -17,8 +17,8 @@
 
       Ejemplos:
       | nombre | apellido  |  email          | telefono | password |
-      | Vanesa | Plata     |vprlta@gmail.com | 44244243 | rolio2222 |
-      | Jorge  | riuz      |jruuz@gmail.com  | 43322234 | cas2a1111 |
+      | Vanesa | Plata     |vpeerlta@gmail.com | 44244243 | rolio2222 |
+      | Jorge  | riuz      |jrueeuz@gmail.com  | 43322234 | cas2a1111 |
 
 
   Escenario: Crear cuenta parametrizada
@@ -26,8 +26,8 @@
     Y entra a la página de registro
     Cuando el usuario se registra con los siguientes datos
       | nombre | apellido  |  email          | telefono | password |
-      | Paula  | Robles    |prob@gmail.com   | 4421112  | tatao22442 |
-      | Esteban| Rivero    |eriv@gmail.com   | 4356334  | lalaa1111 |
+      | Paula  | Robles    |preeob@gmail.com   | 4421112  | tatao22442 |
+      | Esteban| Rivero    |ereeiv@gmail.com   | 4356334  | lalaa1111 |
     Entonces se verifica que la cuenta se creo correctamente
 
 
