@@ -25,22 +25,11 @@ public class RegisterTest extends BaseTest {
 
         //4)
         //registerPage.LlenarForm("Arturo","Virgolini","aavirgo@gmail.com","56558768","1234");
-        registerPage.LlenarForm(faker.name().firstName(),
-                                faker.name().lastName(),
-                                faker.internet().emailAddress(),
-                                faker.phoneNumber().phoneNumber(),
-                                faker.internet().password());
-
-
-
+        registerPage.LlenarForm(faker.name().firstName(),faker.name().lastName(),faker.internet().emailAddress(),faker.phoneNumber().phoneNumber(),faker.internet().password());
 
         Assert.assertEquals(successAccountPage.getTitle(),"Account");
 
         Assert.assertTrue(successAccountPage.textEsVisible());
 
     }
-
-
-
-
 }

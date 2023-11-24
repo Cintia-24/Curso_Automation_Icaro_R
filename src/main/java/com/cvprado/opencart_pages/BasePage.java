@@ -21,6 +21,10 @@ public class BasePage {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
         element.click();
     }
+    public void visibleClick(By locator){
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.click();
+    }
 
     public String getText(By locator) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

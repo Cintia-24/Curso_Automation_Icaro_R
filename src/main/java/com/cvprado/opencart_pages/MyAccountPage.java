@@ -2,7 +2,6 @@ package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class MyAccountPage extends BasePage{
@@ -13,8 +12,6 @@ public class MyAccountPage extends BasePage{
     private final By cameraProduct =By.xpath("//*[@id=\"content\"]/div[2]/div[1]/div/div[2]/div[1]/h4/a");
     // tiene nombre pero si lo uso no lo encuentra. y falla el test.
 
-    WebDriver driver;
-    WebDriverWait wait;
 
     public MyAccountPage(WebDriver driver) {
         super(driver);

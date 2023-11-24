@@ -8,7 +8,7 @@ import io.cucumber.java.es.Y;
 import org.testng.Assert;
 
 public class HomeDefinitions {
-    private HomePage homePage;
+    private final HomePage homePage;
 
     public HomeDefinitions() {
         this.homePage = new HomePage(Hooks.getDriver());

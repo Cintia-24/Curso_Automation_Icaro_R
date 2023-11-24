@@ -2,6 +2,7 @@ package com.cvprado.stepDefinitions;
 
 import com.cvprado.hooks.Hooks;
 import com.cvprado.opencart_pages.HomePage;
+import com.cvprado.opencart_pages.MyAccountPage;
 import com.cvprado.opencart_pages.RegisterPage;
 import com.cvprado.opencart_pages.SuccessAccountPage;
 import com.github.javafaker.Faker;
@@ -18,6 +19,7 @@ public class RegisterDefinitions {
     private HomePage homePage;
     private RegisterPage registerPage;
     private SuccessAccountPage successAccountPage;
+    private MyAccountPage myAccountPage;
 
 
     Faker faker = new Faker();
@@ -26,12 +28,12 @@ public class RegisterDefinitions {
         this.homePage = new HomePage(Hooks.getDriver());
         this.registerPage = new RegisterPage(Hooks.getDriver());
         this.successAccountPage = new SuccessAccountPage(Hooks.getDriver());
+        this.myAccountPage =new MyAccountPage(Hooks.getDriver());
     }
 
     @Y("entra a la página de registro")
-    public void entraALaPáginaDeRegistro(){
+    public void entraALaPaginaDeRegistro(){
         homePage.ingresarRegister();
-
     }
 
     //@Cuando("ingresa cada uno de los datos requeridos y presiona continuar")
@@ -57,7 +59,7 @@ public class RegisterDefinitions {
                                                                           String email,
                                                                           String telefono,
                                                                           String password) {
-        registerPage.LlenarForm(nombre,apellido,email, telefono,password);
+        myAccountPage.getTitulo();
     }
 
     @Entonces("se verifica que la cuenta se creo correctamente")
@@ -83,7 +85,10 @@ public class RegisterDefinitions {
 
     @Cuando("ingresa cada uno de los datos requeridos y presiona continuar")
     public void ingresaCadaUnoDeLosDatosRequeridosYPresionaContinuar() {
-
+        registerPage.LlenarForm(faker.name().firstName(),
+                faker.name().lastName(),
+                faker.internet().emailAddress(),
+                faker.phoneNumber().phoneNumber(),faker.internet().password());
     }
 }
 //@Entonces("se verifica el mensaje de error {string}")

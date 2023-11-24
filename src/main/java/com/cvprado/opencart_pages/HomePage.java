@@ -15,9 +15,10 @@ public class HomePage extends BasePage{
     private By registerBtn = By.xpath("//a [contains (@href,\"account/register\")]");
 
 
-    public HomePage(WebDriver driver) {
+    public HomePage(WebDriver driver){
         super(driver);
     }
+
 
     public void ingresarLogin() {
         click(myAccountBtn);

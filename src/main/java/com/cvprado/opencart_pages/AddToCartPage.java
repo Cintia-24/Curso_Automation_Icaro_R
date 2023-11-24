@@ -18,7 +18,7 @@ public class AddToCartPage extends BasePage {
     }
 
     public void verModoLista(){
-        click(listViewBtn);
+        visibleClick(listViewBtn);
     }
 
     public boolean productIsPresent(){

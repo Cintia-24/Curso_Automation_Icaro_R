@@ -8,8 +8,8 @@ import io.cucumber.java.es.Entonces;
 import org.testng.Assert;
 
 public class LoginDefinitions {
-    private LoginPage loginPage;
-    private MyAccountPage myAccountPage;
+    private final LoginPage loginPage;
+    private final MyAccountPage myAccountPage;
 
     public LoginDefinitions() {
         this.loginPage = new LoginPage(Hooks.getDriver());

@@ -9,9 +9,9 @@ import io.cucumber.java.es.Entonces;
 import org.testng.Assert;
 
 public class AddToCartDefinitions {
-    private MyAccountPage myAccountPage;
-    private ProductPage productPage;
-    private CartPage cartPage;
+    private final MyAccountPage myAccountPage;
+    private final ProductPage productPage;
+    private final CartPage cartPage;
 
 
     public AddToCartDefinitions() {

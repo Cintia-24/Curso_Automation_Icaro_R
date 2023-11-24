@@ -2,11 +2,6 @@ package com.cvprado.opencart_pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class RegisterPage extends BasePage {
 
@@ -24,8 +19,6 @@ public class RegisterPage extends BasePage {
 
     private By continueBtn = By.xpath("//input[@type='submit']");
 
-    WebDriverWait wait;
-
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -37,12 +30,11 @@ public class RegisterPage extends BasePage {
         sendKeys(emailInput,email);
         sendKeys(telInput,telefono);
         sendKeys(passInput,password);
-
-        //WebElement confirmpassInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmpassInput));
-        //confirmpassInputElement.sendKeys(password);
+        sendKeys(confirmpassInput,password);
 
         click(agreeBtn);
         click(continueBtn);
 
     }
+
 }

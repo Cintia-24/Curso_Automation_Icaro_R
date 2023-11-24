@@ -22,8 +22,6 @@ public class BaseTest {
         options.addArguments("start-maximized");
         options.addArguments("incognito");
 
-
-
         options.setPageLoadTimeout(Duration.ofSeconds(60));
 
         this.driver = new ChromeDriver(options);
