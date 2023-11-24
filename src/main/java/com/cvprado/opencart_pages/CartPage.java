@@ -17,9 +17,9 @@ public class CartPage extends BasePage{
     }
 
     public Boolean tableEsVisible() {
-        return isDisplayed(tableCart);
+        return Displayed(tableCart);
     }
     public boolean quantityIsVisible(){
-        return isDisplayed(inputQuantity);
+        return Displayed(inputQuantity);
     }
 }

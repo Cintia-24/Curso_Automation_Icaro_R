@@ -22,7 +22,7 @@ public class AddToCartPage extends BasePage {
     }
 
     public boolean productIsPresent(){
-        return isDisplayed(imgProduct);
+        return Displayed(imgProduct);
     }
 
     public void addToWishList(){

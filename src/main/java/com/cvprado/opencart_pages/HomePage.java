@@ -34,11 +34,11 @@ public class HomePage extends BasePage{
     }
 
     public Boolean buscadorEsVisible() {
-        return isDisplayed(search);
+        return Displayed(search);
     }
 
     public Boolean carruselEsVisible() {
-        return isDisplayed(carrousel);
+        return Displayed(carrousel);
     }
 
     //public void validarHome(){

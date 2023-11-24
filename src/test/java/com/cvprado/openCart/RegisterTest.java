@@ -30,6 +30,5 @@ public class RegisterTest extends BaseTest {
         Assert.assertEquals(successAccountPage.getTitle(),"Account");
 
         Assert.assertTrue(successAccountPage.textEsVisible());
-
     }
 }

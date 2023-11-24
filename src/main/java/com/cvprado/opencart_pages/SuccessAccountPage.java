@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 
 public class SuccessAccountPage extends BasePage{
 
-    private By title = By.xpath("//h1[text()='Account']");
+    private By title = By.xpath("//div[@id='content']/h1");
 
-   private By text = By.xpath("//*[contains(text(),'Congratulations')]");
+   private final By succestext = By.xpath("//*[contains(text(),'Congratulations')]");
 
 
     public SuccessAccountPage(WebDriver driver) {
@@ -21,6 +21,6 @@ public class SuccessAccountPage extends BasePage{
     }
 
     public Boolean textEsVisible() {
-        return isDisplayed(text);
+        return Displayed(succestext);
     }
 }

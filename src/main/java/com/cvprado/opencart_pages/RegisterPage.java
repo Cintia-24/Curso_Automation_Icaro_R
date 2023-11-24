@@ -23,10 +23,10 @@ public class RegisterPage extends BasePage {
         super(driver);
     }
 
-    public void LlenarForm(String name, String lastname, String email,String telefono, String password) {
+    public void LlenarForm(String nombre, String apellido, String email,String telefono, String password) {
 
-        sendKeys(nameInput,name);
-        sendKeys(lastnameInput,lastname);
+        sendKeys(nameInput,nombre);
+        sendKeys(lastnameInput,apellido);
         sendKeys(emailInput,email);
         sendKeys(telInput,telefono);
         sendKeys(passInput,password);

@@ -20,6 +20,6 @@ public class WishListPage extends BasePage{
     }
     public boolean imgEsVisible(){
 
-        return isDisplayed(productImg);
+        return Displayed(productImg);
     }
 }

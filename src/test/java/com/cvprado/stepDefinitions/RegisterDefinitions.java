@@ -16,16 +16,14 @@ import java.util.List;
 import java.util.Map;
 
 public class RegisterDefinitions {
-    private HomePage homePage;
-    private RegisterPage registerPage;
-    private SuccessAccountPage successAccountPage;
-    private MyAccountPage myAccountPage;
+    private final HomePage homePage;
+    private final RegisterPage registerPage;
+    private final SuccessAccountPage successAccountPage;
 
     public RegisterDefinitions(){
         this.homePage = new HomePage(Hooks.getDriver());
         this.registerPage = new RegisterPage(Hooks.getDriver());
         this.successAccountPage = new SuccessAccountPage(Hooks.getDriver());
-        this.myAccountPage =new MyAccountPage(Hooks.getDriver());
     }
 
     Faker faker = new Faker();
@@ -34,16 +32,6 @@ public class RegisterDefinitions {
     public void entraALaPaginaDeRegistro(){
         homePage.ingresarRegister();
     }
-
-    //@Cuando("ingresa cada uno de los datos requeridos y presiona continuar")
-    //public void ingresaCadaUnoDeLosDatosRequeridosYPresionaContinuar() {
-        //registerPage.LlenarForm(faker.name().firstName(),
-               // faker.name().lastName(),
-               // faker.internet().emailAddress(),
-               // faker.phoneNumber().phoneNumber(),
-                //faker.internet().password());
-
-        //registerPage.LlenarForm();
 
 
     @Entonces("debería ingresar a la página de mi cuenta y ver un mensaje de exito")
@@ -58,6 +46,7 @@ public class RegisterDefinitions {
                                                                           String email,
                                                                           String telefono,
                                                                           String password) {
+        registerPage.LlenarForm(nombre, apellido, email, telefono, password);
     }
 
     @Entonces("se verifica que la cuenta se creo correctamente")
@@ -73,8 +62,8 @@ public class RegisterDefinitions {
         for(Map<String,String> mapa :data ){
             System.out.println(mapa);
 
-            String nombre = mapa.get("nombre");
-            String email = mapa.get("email");
+            //String nombre = mapa.get("nombre");
+            //String email = mapa.get("email");
 
             //acá no genera los test sino que me imprime un listado que me muestra los datos de la tabla
             // y la última parte me recupera cada uno de los datos de una fila
@@ -88,8 +77,9 @@ public class RegisterDefinitions {
                 faker.internet().emailAddress(),
                 faker.phoneNumber().phoneNumber(),faker.internet().password());
     }
+
+    //@Entonces("se verifica el mensaje de error {string}")
+    //public void seVerificaElMensajeDeError(String mensaje) {
+    //Assert.assertEquals(registerPage.getMensajeDeError(), mensaje);
+    //}
 }
-//@Entonces("se verifica el mensaje de error {string}")
-//public void seVerificaElMensajeDeError(String mensaje) {
-//Assert.assertEquals(registerPage.getMensajeDeError(), mensaje);
-//}
